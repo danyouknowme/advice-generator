@@ -30,13 +30,13 @@ export default class Card extends Vue {
     advice: "Loading...",
   };
 
-  async getNewAdvice(): null {
+  async getNewAdvice(): Promise<void> {
     this.advice.advice = "Loading...";
     const response = await axios.get("https://api.adviceslip.com/advice");
     this.advice = response.data.slip;
   }
 
-  async created(): null {
+  async created(): Promise<void> {
     this.getNewAdvice();
   }
 }
