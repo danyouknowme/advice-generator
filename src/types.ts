@@ -1,4 +1,4 @@
 export interface IAdviceProps {
-  id: number;
+  id?: number;
   advice: string;
 }
